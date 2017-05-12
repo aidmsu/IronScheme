@@ -9,7 +9,6 @@ using System;
 using System.Diagnostics;
 using System.Text;
 using IronScheme.Hosting;
-using IronScheme.Remoting.Server;
 using System.IO;
 using System.Collections.Generic;
 
@@ -73,7 +72,6 @@ namespace IronScheme.Runtime
           break;
       }
 
-      args = Args(args, "--remoting-server", () => Host.Start());
       args = Args(args, "--show-loaded-libraries", () => Builtins.ShowImports = true);
       args = ParseIncludes(args);
 

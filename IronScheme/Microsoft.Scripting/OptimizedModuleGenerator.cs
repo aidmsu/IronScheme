@@ -21,7 +21,6 @@ using System.Reflection;
 using System.Security;
 using System.IO;
 using System.Threading;
-using System.Security.Permissions;
 
 using Microsoft.Scripting;
 using Microsoft.Scripting.Ast;
@@ -66,7 +65,7 @@ namespace Microsoft.Scripting.Generation {
                     // If we are running in partial-trust, fall through to generated dynamic code.
                     // TODO: Symbol information requires unmanaged code permission.  Move the error
                     // handling lower and just don't dump PDBs.
-                    new SecurityPermission(SecurityPermissionFlag.UnmanagedCode).Demand();
+                    //new SecurityPermission(SecurityPermissionFlag.UnmanagedCode).Demand();
 
 #endif
                     return new StaticFieldModuleGenerator(moduleName, scriptCodes);

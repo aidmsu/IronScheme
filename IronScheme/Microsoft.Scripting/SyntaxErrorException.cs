@@ -20,7 +20,6 @@ using System.Text;
 using Microsoft.Scripting.Hosting;
 using Microsoft.Scripting.Generation;
 using Microsoft.Scripting.Utils;
-using System.Security.Permissions;
 
 namespace Microsoft.Scripting {
     [Serializable]
@@ -54,7 +53,7 @@ namespace Microsoft.Scripting {
         protected SyntaxErrorException(SerializationInfo info, StreamingContext context) 
             : base(info, context) { }
 
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
+        //[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
         public override void GetObjectData(SerializationInfo info, StreamingContext context) {
             Contract.RequiresNotNull(info, "info");
 

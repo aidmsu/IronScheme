@@ -22,7 +22,6 @@ using System.Reflection.Emit;
 using System.IO;
 using System.Security;
 using System.Security.Policy;
-using System.Security.Permissions;
 using System.Threading;
 using System.Globalization;
 using System.Collections.Generic;
@@ -83,9 +82,9 @@ namespace Microsoft.Scripting.Generation {
             _peKind = peKind;
             _outFileName = outFile;
 
-#if SILVERLIGHT  // AssemblyBuilderAccess.RunAndSave, Environment.CurrentDirectory
+#if !NETDESKTOP  // AssemblyBuilderAccess.RunAndSave, Environment.CurrentDirectory
             asmname.Name = moduleName;
-            _myAssembly = domain.DefineDynamicAssembly(asmname, AssemblyBuilderAccess.Run);
+            _myAssembly = System.Reflection.Emit.AssemblyBuilder.DefineDynamicAssembly(asmname, AssemblyBuilderAccess.Run);
             _myModule = _myAssembly.DefineDynamicModule(moduleName, EmitDebugInfo);
 #else
             try {

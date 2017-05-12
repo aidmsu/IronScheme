@@ -21,8 +21,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
 
-using System.Security.Permissions;
-
 using Microsoft.Scripting.Math;
 using Microsoft.Scripting.Actions;
 using Microsoft.Scripting.Utils;

@@ -20,7 +20,7 @@ namespace Microsoft.Scripting.Utils {
     public static class Utilities {
 
         public static bool IsRemote(object obj) {
-#if !SILVERLIGHT
+#if NETDESKTOP
             return RemotingServices.IsObjectOutOfAppDomain(obj);
 #else
             return false;

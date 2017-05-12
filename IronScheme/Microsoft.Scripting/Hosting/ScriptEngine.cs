@@ -173,7 +173,7 @@ namespace Microsoft.Scripting.Hosting {
 #if !SILVERLIGHT // SecurityPermission
             if (engineOptions.ClrDebuggingEnabled) {
                 // Currently, AssemblyBuilder.DefineDynamicModule requires high trust for emitting debug information.
-                new System.Security.Permissions.SecurityPermission(System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode).Demand();
+                //new System.Security.Permissions.SecurityPermission(System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode).Demand();
             }
 #endif
             _provider = provider;

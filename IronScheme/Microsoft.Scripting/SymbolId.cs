@@ -17,7 +17,6 @@ using System;
 using System.Text;
 using System.Runtime.Serialization;
 using System.Diagnostics;
-using System.Security.Permissions;
 using Microsoft.Scripting.Utils;
 
 namespace Microsoft.Scripting {
@@ -120,7 +119,7 @@ namespace Microsoft.Scripting {
             _id = SymbolTable.StringToId(info.GetString("symbolName"))._id;
         }
 
-        [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
+        //[SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.SerializationFormatter)]
         public void GetObjectData(SerializationInfo info, StreamingContext context) {
             Contract.RequiresNotNull(info, "info");
 
